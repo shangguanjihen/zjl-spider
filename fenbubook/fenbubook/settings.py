@@ -19,10 +19,10 @@ NEWSPIDER_MODULE = 'fenbubook.spiders'
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"   #去重类，
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"               #调度器，从redis中调度
 SCHEDULER_PERSIST = True                                     #调度器持久化，断开后可以继续爬取
-REDIS_URL = 'redis://:332512@129.204.204.205:6379'     #远程服务器上redis的地址端口
+REDIS_URL = 'redis://localhost:6379'     #远程服务器上redis的地址端口
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 
-SPLASH_URL = 'http://129.204.204.205:8051'                #远程服务器上splash的地址端口
+SPLASH_URL = 'http://localhost:8051'                #远程服务器上splash的地址端口
 #DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'  #去重类
 HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage' #缓存存储，scrapy-splash必备
 # Obey robots.txt rules
