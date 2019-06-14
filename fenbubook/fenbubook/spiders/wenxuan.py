@@ -50,6 +50,7 @@ class WenxuanSpider(RedisSpider):
             item['book_img'] = response.xpath('//*[@id="grid"]/li[1]/ul/li[1]/div/div[1]/a/img/@src').extract_first()
             if not item['book_img'][:4] == 'http':
                 item['book_img'] = 'http' + item['book_img']
+                #将请求交给splash处理，可以自定义lua脚本，设置合适的等待时间，加载js脚本
             yield SplashRequest(url=item['book_url'], callback=self.parse_book_detail, args={'wait':10},meta={'item': item})
             #yield Request(url=item['book_url'],callback=self.parse_book_detail,meta={'item':item})
     def parse_book_detail(self,response):
