@@ -118,8 +118,8 @@ class SeleniumMiddleware():
         self.logger = getLogger(__name__)
         self.timeout = timeout
         self.options = Options()
-        self.options.add_argument('--headless')
-        self.options.add_argument('--disable-gpu')
+        self.options.add_argument('--headless')  #无头
+        self.options.add_argument('--disable-gpu') #不加载图片
         self.browser = webdriver.Chrome(r'd:\谷歌\Google\Chrome\Application\chromedriver.exe', options=self.options)
         #self.browser = webdriver.PhantomJS( )
         self.wait = WebDriverWait(self.browser, self.timeout)
