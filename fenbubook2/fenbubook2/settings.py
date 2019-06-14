@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'fenbubook2.spiders'
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"   #去重类，
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"               #调度器，从redis中调度
 SCHEDULER_PERSIST = True                                     #调度器持久化，断开后可以继续爬取
-REDIS_URL = 'redis://:332512@129.204.204.205:6379'
+REDIS_URL = 'redis://localhost:6379'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'fenbubook2 (+http://www.yourdomain.com)'
 
